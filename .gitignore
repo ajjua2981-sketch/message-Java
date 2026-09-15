@@ -1,0 +1,31 @@
+# Runtime artifacts
+target/
+logs/
+
+# Per-env properties with real credentials — never commit
+src/main/resources/application-dev.properties
+src/main/resources/application-qa.properties
+src/main/resources/application-prod.properties
+
+# Certificates & secrets (keep folder structure via READMEs, not the files)
+resources/kafka/**/*.keytab
+resources/kafka/**/*.pem
+resources/kafka/**/*.conf
+resources/kafka/**/*.jks
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
