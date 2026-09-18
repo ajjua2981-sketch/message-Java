@@ -1,8 +1,8 @@
 package com.dams.messageparsing.processor;
 
 import com.dams.messageparsing.db.OracleHandler;
-import com.dams.messageparsing.parser.ParseResult;
 import com.dams.messageparsing.parser.XmlToJsonParser;
+import com.dams.messageparsing.parser.XmlToJsonParser.ParseResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,9 +1,10 @@
-# ─── QA environment ─────────────────────────────────────────────────────────
-# Copy this file to application-qa.properties and fill in real values.
-# application-qa.properties is gitignored — never commit real credentials.
+# Copy this file to application-<env>.properties (e.g. application-dev.properties)
+# and fill in real values. That file is gitignored — never commit credentials.
+#
+# Run with: java -Dspring.profiles.active=dev -jar target/message-parsing-1.0.0.jar
 
 # ── Kafka ────────────────────────────────────────────────────────────────────
-spring.kafka.bootstrap-servers=your-kafka-broker1:9092,your-kafka-broker2:9092,your-kafka-broker3:9092
+spring.kafka.bootstrap-servers=your-kafka-broker1:9092,your-kafka-broker2:9092
 spring.kafka.consumer.group-id=your-consumer-group-id
 
 app.kafka.topic=your-kafka-topic
@@ -11,10 +12,10 @@ app.kafka.auto-offset-reset=earliest
 app.kafka.security-protocol=SASL_SSL
 app.kafka.sasl-mechanism=GSSAPI
 app.kafka.sasl-kerberos-service-name=your-kerberos-service-name
-app.kafka.sasl-kerberos-principal=your-principal@your-domain.com
-app.kafka.keytab-file=resources/kafka/qa/your-service-account.keytab
-app.kafka.krb5-conf=resources/kafka/qa/krb5.conf
-app.kafka.ssl-ca-location=resources/kafka/qa/common.pem
+app.kafka.sasl-kerberos-principal=your-principal@YOUR-DOMAIN.COM
+app.kafka.keytab-file=resources/kafka/dev/your-service-account.keytab
+app.kafka.krb5-conf=resources/kafka/dev/krb5.conf
+app.kafka.ssl-ca-location=resources/kafka/dev/common.pem
 app.kafka.session-timeout-ms=30000
 app.kafka.heartbeat-interval-ms=10000
 app.kafka.max-poll-interval-ms=300000
